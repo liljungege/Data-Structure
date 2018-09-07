@@ -11,6 +11,7 @@ int main(){
     {
         cout << arr[j] << endl;
     }
+    
     int scores[] = {100, 99, 66};
     for (int k = 0; k < sizeof(scores) / sizeof(int); k++)
     {

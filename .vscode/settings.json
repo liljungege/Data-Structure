@@ -1,6 +1,15 @@
 {
     "files.associations": {
         "iosfwd": "cpp",
-        "ostream": "cpp"
-    }
+        "ostream": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "istream": "cpp",
+        "memory": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "xlocnum": "cpp",
+        "iostream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
