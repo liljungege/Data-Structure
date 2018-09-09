@@ -9,16 +9,6 @@ class Array
         T *data;
         int size;
         int capacity;
-        void resize(int newCapacity)
-        {
-            T *newData = new T[newCapacity];
-            for (int i = 0; i < size; i++)
-            {
-                newData[i] = data[i];
-            }
-            data = newData;
-            capacity = newCapacity;
-        }
 
     public:
         Array(int capacity);
@@ -38,6 +28,16 @@ class Array
         T removeFirst();
         T removeLast();
         void removeElement(T e);
+
+        T getLast()
+        {
+            return get(size - 1);
+        }
+
+        T getFirst()
+        {
+            return get(0);
+        }
 };
 
 // 构造函数，传入数组的容量capacity构造Array
@@ -92,11 +92,7 @@ void Array<T>::addFirst(T e)
 template <class T>
 void Array<T>::add(int index, T e)
 {
-    assert(index >= 0 && index <= size);
-
-    if(size == capacity)
-        resize(2 * capacity);
-
+    assert(size < capacity && index >= 0 && index <= size);
     for (int i = size - 1; i >= index; i--)
     {
         data[i + 1] = data[i];
@@ -172,9 +168,6 @@ T Array<T>::remove(int index)
         data[i-1] = data[i];
     }
     size--;
-
-    if(size == capacity / 4 && capacity / 2 != 0)
-        resize(capacity / 2);
     return ret;
 }
 
@@ -197,4 +190,3 @@ void Array<T>::removeElement(T e)
     if(index != -1)
         remove(index);
 }
-

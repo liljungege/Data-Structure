@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    Array<float> *array = new Array<float>();
+    Array<float> *array = new Array<float>(20);
     for (int i = 0; i < 10; i++)
     {
         array->addLast(i);
